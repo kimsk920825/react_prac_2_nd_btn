@@ -12,7 +12,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.querySelector(".root");
-    const App = () => {
+    const MinutesHours = () => {
         let [amount, setAmount] = React.useState();
         let [flip, setFlip] = React.useState(false);
         const onChange = () => {
@@ -27,7 +27,6 @@
         return (
             <div>
                 <div>
-                    <h1 className="Converter">Super Converter</h1>
                     <label htmlFor="minutes">minutes</label>
                     <input
                         value={flip ? amount : amount * 60}
@@ -50,6 +49,15 @@
                 <button onClick={onFlip}>Flip</button>
             </div>
         );
+    };
+    const KmMiles = () =>{
+        return <h3>Killometers to Miles</h3>
+    }
+    const App = () => {
+        <div>
+            <h1 className="Converter">Super Converter</h1>
+            <MinutesHours />
+        </div>
     };
     ReactDOM.render(<App />, root);
 </script>
