@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 </head>
+
 <body>
     <span id="span">Total Counter: 0</span>
     <button id="btn">click</button>
@@ -10,10 +12,11 @@
     let count = 0;
     const button = document.getElementById("btn");
     const span = document.getElementById("span");
-    function clickHandler(){
+    function clickHandler() {
         count = count + 1;
         span.innerText = `Total Counter: ${count}`;
     }
-    button.addEventListener("click",clickHandler)
+    button.addEventListener("click", clickHandler)
 </script>
+
 </html>
