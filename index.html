@@ -12,12 +12,25 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.querySelector(".root");
-
+    const Btn = (props) =>{
+        console.log(props.text)
+        return(
+            <button style={{
+                backgroundColor:"tomato",
+                color:"white",
+                border: 0,
+                borderRadius: 10,
+                padding: "10px 20px",
+            }}>
+            {props.text}
+            </button>
+        );
+    }
     const App = () => {
-
         return (
             <div>
-
+                <Btn text="Save Changes" />
+                <Btn text="Continue" />
             </div>
         );
     };
