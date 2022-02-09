@@ -15,15 +15,17 @@
 
 
     const App = () => {
-        const [counter, modifier] = React.useState(0);
+        let [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            setCounter(counter + 1)
+        }
         return (
             <div>
                 <h3 >Total count: {counter}</h3>
-                <button>Click Me</button>
+                <button onClick={onClick}>Click Me</button>
             </div>
         );
-    }
-        ;
+    };
     ReactDOM.render(<App />, root);
 </script>
 
