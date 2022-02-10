@@ -12,24 +12,31 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.querySelector(".root");
-    const Btn = (props) =>{
-        console.log(props.text)
-        return(
-            <button style={{
-                backgroundColor:"tomato",
-                color:"white",
+    const Btn = ({ text, changeValue }) => {
+
+        return (
+            <button onClick={changeValue} style={{
+                backgroundColor: "tomato",
+                color: "white",
                 border: 0,
                 borderRadius: 10,
                 padding: "10px 20px",
             }}>
-            {props.text}
+                {text}
             </button>
         );
     }
     const App = () => {
+        const [value, setValue] = React.useState("Save Changes");
+        const changeValue = (event) => {
+            return(
+                console.log(event.target.firstChild),
+                setValue(event.target.firstChild)
+            );
+        }
         return (
             <div>
-                <Btn text="Save Changes" />
+                <Btn text={value} changeValue={changeValue} />
                 <Btn text="Continue" />
             </div>
         );
